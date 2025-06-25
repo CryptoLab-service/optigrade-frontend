@@ -1,1 +1,46 @@
+.splashscreen {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Wrapping and layout */
+.splashscreen .overlap-group-wrapper {
+  background-color: #ffffff;
+  height: 874px;
+  width: 402px;
+}
+
+.splashscreen .overlap-group {
+  height: 874px;
+  position: relative;
+}
+
+/* Background and foreground imagery */
+.splashscreen .element {
+  position: absolute;
+  top: 429px;
+  left: 0;
+  width: 402px;
+  height: 445px;
+}
+
+.splashscreen .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 402px;
+  height: 429px;
+}
+
+/* Central grouped content (logo/text) */
+.splashscreen .group {
+  position: absolute;
+  top: 328px;
+  left: 74px;
+  width: 257px;
+  height: 187px;
+}
 
