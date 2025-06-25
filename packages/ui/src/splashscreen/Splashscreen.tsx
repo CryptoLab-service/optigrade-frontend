@@ -1,35 +1,48 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 import x97604931 from "./9760493-1.png";
 import x97604933 from "./9760493-3.png";
 import { HomeIndicator } from "./HomeIndicator";
-import "./style.css";
+
+import styles from "./Splashscreen.module.css";
+import "../../styles/styleguide.css";
 
 export const Splashscreen = (): JSX.Element => {
-  return (
-    <div className="splashscreen">
-      <div className="overlap-group-wrapper">
-        <div className="overlap-group">
-          <img className="element" alt="Element Layer 1" src={x97604933} />
-          <img className="img" alt="Element Layer 2" src={x97604931} />
+  const navigate = useNavigate();
 
-          <div className="group">
-            <div className="logo">
-              <div className="group-2" />
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigate("/home");
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [navigate]);
+
+  const handleTap = () => navigate("/home");
+
+  return (
+    <div className={styles.splashscreen} onClick={handleTap}>
+      <div className={styles["overlap-group-wrapper"]}>
+        <div className={styles["overlap-group"]}>
+          <img className={styles.element} alt="Element Layer 1" src={x97604933} />
+          <img className={styles.img} alt="Element Layer 2" src={x97604931} />
+
+          <div className={styles.group}>
+            <div className={styles.logo}>
+              <div className={styles["group-2"]} />
             </div>
-            <div className="text-wrapper">OptiGrade</div>
+            <div className={styles["text-wrapper"]}>OptiGrade</div>
           </div>
 
           <HomeIndicator
-            className="home-indicator-instance"
+            className={styles["home-indicator-instance"]}
             device="i-phone"
-            homeIndicatorClassName="design-component-instance-node"
+            homeIndicatorClassName={styles["design-component-instance-node"]}
             orientation="portrait"
           />
-
-          <p className="done">Tap the screen to launch</p>
         </div>
       </div>
     </div>
   );
 };
-
