@@ -3,15 +3,8 @@
   "version": "0.0.0",
   "sideEffects": false,
   "license": "MIT",
-  "exports": {
-    "./button": {
-      "types": "./src/button.tsx",
-      "import": "./dist/button.mjs",
-      "require": "./dist/button.js"
-    }
-  },
   "scripts": {
-    "build": "tsup",
+    "build": "tsup src/index.ts --dts",
     "dev": "tsup --watch",
     "lint": "eslint . --max-warnings 0",
     "clean": "rm -rf .turbo node_modules dist"
